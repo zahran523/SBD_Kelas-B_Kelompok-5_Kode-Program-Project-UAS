@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.Judul-header {
+  position: absolute;
+  top: 38px;
+  left: 81px;
+
+  color: #393e46;
+  font-size: 40px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+nav ul {
+  display: flex;
+  color: #000;
+  font-size: 24px;
+  justify-content: space-between;
+}
+
+.BoxHome {
+  width: 118px;
+  height: 44px;
+  border-radius: 10px;
+  background: #393e46;
+}
