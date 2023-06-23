@@ -3,27 +3,221 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.Container {
+  width: 100%;
+  height: 100%;
+}
+
 .Judul-header {
   position: absolute;
-  top: 38px;
+  top: -8px;
   left: 81px;
 
   color: #393e46;
-  font-size: 40px;
+  font-size: 35px;
   font-style: italic;
   font-weight: 600;
 }
 
-nav ul {
+.navbar {
+  width: 100%;
+  height: auto;
+}
+
+.navbar ul {
+  position: relative;
+  left: 500px;
   display: flex;
+  font-size: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  margin-right: 500px;
+}
+
+.navbar a {
+  text-decoration: none;
   color: #000;
-  font-size: 24px;
-  justify-content: space-between;
+}
+
+.navbar a:hover {
+  color: #bfbfbf;
 }
 
 .BoxHome {
-  width: 118px;
-  height: 44px;
+  width: 90px;
+  height: 40px;
   border-radius: 10px;
   background: #393e46;
+}
+
+.BoxHome a {
+  position: relative;
+  left: 15px;
+  top: 5px;
+  color: #fff;
+}
+
+/* ----------page login---------- */
+
+.Logo-login {
+  position: absolute;
+  transform: scale(1.1);
+  left: 80px;
+  top: 150px;
+}
+
+.sudut-atas {
+  position: absolute;
+  left: 910px;
+  top: -60px;
+  width: 845.598px;
+  height: 306.718px;
+  transform: rotate(35.462deg);
+  flex-shrink: 0;
+  background-color: #00adb5;
+  z-index: -1;
+}
+
+.sudut-bawah {
+  position: absolute;
+  left: -300px;
+  top: 600px;
+  width: 845.598px;
+  height: 306.718px;
+  transform: rotate(35.462deg);
+  flex-shrink: 0;
+  background-color: #00adb5;
+  z-index: -1;
+}
+
+.boxlogin {
+  position: absolute;
+  top: 130px;
+  left: 750px;
+  width: 650px;
+  height: 676px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #fbfbfb;
+  background-blend-mode: LUMINOSITY;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.sign-in {
+  position: relative;
+  top: 127px;
+  color: #000;
+  text-align: center;
+  font-size: 64px;
+}
+
+.boxlogin h1 {
+  position: relative;
+  top: 130px;
+  color: #000;
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.input-id-admin input {
+  position: relative;
+  color: #fff;
+  top: 150px;
+  left: 175px;
+  width: 285px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background: #224957;
+}
+
+.input-id-admin input::placeholder {
+  color: #fff;
+  font-size: 14px;
+}
+
+.input-id-admin input[type="text"] {
+  padding-left: 10px;
+}
+
+.input-password input {
+  position: relative;
+  color: #fff;
+  top: 180px;
+  left: 175px;
+  width: 285px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background: #224957;
+}
+
+.input-password input::placeholder {
+  color: #fff;
+  font-size: 14px;
+}
+
+.input-password input[type="text"] {
+  padding-left: 10px;
+}
+
+.btnremember-me {
+  position: relative;
+  top: 190px;
+  left: 178px;
+  width: 18px;
+  height: 17px;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #224957;
+  transition: transform 0.3s ease;
+}
+
+.btnremember-me::after {
+  content: "\2713";
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  transform: translateY(-50%) scale(0);
+  font-size: 14px;
+  color: #fff;
+}
+
+.btnremember-me:focus::after {
+  transform: translateY(-50%) scale(1);
+}
+
+.ingat-saya {
+  position: relative;
+  top: 154px;
+  left: 205px;
+}
+
+.lupa-pw {
+  position: relative;
+  top: 105px;
+  left: 350px;
+  color: #00adb5;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.Login {
+  position: relative;
+  top: 165px;
+  left: 58px;
+  width: 295px;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+  background: #00adb5;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  text-transform: capitalize;
 }
