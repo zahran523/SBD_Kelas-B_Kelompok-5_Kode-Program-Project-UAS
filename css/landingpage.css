@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.Container {
+  width: 100%;
+  height: 100%;
+}
+
+/* ------------header------------ */
+header {
+  position: relative;
+  background-color: #00adb5;
+  width: auto;
+  height: 62px;
+}
+
+.Judul-header {
+  position: absolute;
+  top: -5px;
+  left: 75px;
+  color: #fff;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+header img {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+
+.searchbar {
+  position: relative;
+  top: 13px;
+  left: 900px;
+  width: 300px;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  background: var(--system-materials-sml-thick, rgba(250, 250, 250, 0.93));
+}
+
+.btn-log-out {
+  position: relative;
+  top: 13px;
+  left: 950px;
+  width: 136px;
+  padding: 6px;
+  border-radius: 10px;
+  color: #fff;
+  background: #f00;
+}
+/* ----------menu navbar---------- */
+.Side-navbar {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  background-color: #eee;
+}
+
+.Side-navbar ul {
+  position: relative;
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  list-style: none;
+}
+
+.Side-navbar ul li {
+  margin-bottom: 40px;
+}
+
+.Side-navbar a {
+  text-decoration: none;
+  color: #000;
+}
+
+.box-profile {
+  width: auto;
+  height: 64px;
+  border-radius: 10px;
+  background: #393e46;
+}
+
+.box-profile img {
+  position: relative;
+  top: 8px;
+  left: 8px;
+}
+
+.box-profile span {
+  position: relative;
+  top: -40px;
+  left: 70px;
+  display: flex;
+  font-size: 12px;
+  color: #fff;
+}
+
+.garis-pemisah {
+  position: relative;
+  top: 10px;
+  left: 20px;
+  width: 250.002px;
+  height: 2px;
+  margin-bottom: 40px;
+  background: #000;
+}
+
+.box-dashboard {
+  position: absolute;
+  top: -18px;
+  left: -50px;
+  width: 100%;
+  height: 63px;
+  background-color: #aaa;
+}
+
+.dashboard {
+  position: relative;
+  top: 20px;
+  left: 89px;
+}
+
+/* -----------footer---------- */
+.box-footer {
+  position: absolute;
+  bottom: -15%;
+  display: flex;
+  width: 1440px;
+  height: 72px;
+  padding: 0px 598px 0px 674px;
+  align-items: center;
+  flex-shrink: 0;
+  background: #393e46;
+}
+
+.box-footer h1 {
+  color: #9e9e9e;
+  font-size: 12px;
+  font-weight: normal;
+}
