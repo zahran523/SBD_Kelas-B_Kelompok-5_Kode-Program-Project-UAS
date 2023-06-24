@@ -235,6 +235,10 @@ body {
   transition: transform 0.5s;
 }
 
+.btn-Login a {
+  text-decoration: none;
+  color: #fff;
+}
 .btn-Login:active {
   transform: scale(0.9);
 }

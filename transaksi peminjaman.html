@@ -3,30 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perpus DB</title>
-    <link rel="stylesheet" href="css/transaksi peminjaman.css" />
+    <title>Transaksi Peminjaman || Perpus DB</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- My Style -->
+
+    <link rel="stylesheet" href="css/landingpage.css" />
   </head>
   <body>
-    <header>
-      <div class="Judul-header">PERPUS DB</div>
-      <div class="toolbar">
-        <input type="search" name="search"></input>
-        <button type="button" name="log-out">Log Out</button>
-      </div>
-    </header>
-    <div class="grid-container">
-      <aside>
-        <nav class="navbar">
-          <ul>
-            <li><button type="button" class="sidebar-list"><a href="#">Dashboard</a></button></li>
-            <li><button type="button" class="sidebar-list"><a href="#">Data Buku</a></button></li>
-            <li><button type="button" class="sidebar-list"><a href="#">Data Member</a></button></li>
-            <li><button type="button" class="sidebar-list"><a href="#">Data Petugas</a></button></li>
-            <li><button type="button" class="sidebar-list"><a href="#">Transaksi Peminjaman</a></button></li>
-            <li><button type="button" class="sidebar-list"><a href="#">Laporan Denda</a></button></li>
-          </ul>
-        </nav>
-      </aside>
-      <article>tabel</article>
-    </div> </body>
+    <div class="container">
+    <!-- header start -->
+      <header>
+        <h1 class="Judul-header">PERPUS DB</h1>
+        <img src="img/Logo Perpus db.png" alt="Logo Perpus DB" />
+        <input class="searchbar" type="text" placeholder="Search" />
+        <button class="btn-log-out"><a href="index.html">Log Out</a></button>
+      </header>
+    <!-- header end -->
+    <!-- Side navbar start -->
+      <nav class="Side-navbar">
+        <div class="box-profile">
+          <a href="#">
+            <img src="img/user-circle.svg" alt="Logo User" />
+            <span>Zahran Fikri</span>
+            <span>ID Admin : 2111511010</span>
+          </a>
+        </div>
+        <div class="garis-pemisah"></div>
+        <ul>
+          <div class="box-transaksi-peminjaman"></div>
+          <li>
+              <a class="dashboard" href="dashboard.html">Dashboard</a>
+              <img src="img/Icon Dashboard.png" alt="Icon Dashboard" />
+          </li>
+          <li>
+              <a class="data-buku" href="data buku.html">Data Buku</a>
+              <img src="img/Icon Data Buku.png" alt="Icon Data Buku" />
+          </li>
+          <li>
+              <a class="data-member" href="data member.html">Data Member</a>
+              <img src="img/Icon Data Member.png" alt="Icon Data Member" />
+          </li>
+          <li>
+              <a class="data-petugas" href="data petugas.html">Data Petugas</a>
+              <img src="img/Icon Data Petugas.png" alt="Icon Data Petugas" />
+          </li>
+          <li>
+              <a class="transaksi-peminjaman" href="transaksi peminjaman.html">Transaksi Peminjaman</a>
+              <img src="img/Icon Transaksi Peminjaman.png" alt="Icon Transaksi Peminjaman"/>
+          </li>
+          <li>
+              <a class="laporan-denda" href="laporan denda.html">Laporan Denda</a>
+              <img src="img/Icon Laporan Denda.png" alt="Icon Laporan Denda" />
+          </li>
+        </ul>
+      </nav>
+      <!-- Side navbar end -->
+      <!-- footer start -->
+      <footer>
+        <div class="box-footer">
+          <h1>Copyright © Perpus db 2023</h1>
+        </div>
+      </footer>
+      <!-- footer end -->
+    </div>
+  </body>
 </html>
