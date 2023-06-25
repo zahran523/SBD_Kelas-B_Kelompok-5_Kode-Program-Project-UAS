@@ -24,6 +24,7 @@ if ($resultMember->num_rows === 0) {
         'status' => 'error',
         'message' => 'ID member tidak valid.'
     ];
+    header('Content-Type: application/json');
     echo json_encode($response);
     exit();
 }
@@ -39,6 +40,7 @@ if ($resultBuku->num_rows === 0) {
         'status' => 'error',
         'message' => 'ID buku tidak valid.'
     ];
+    header('Content-Type: application/json');
     echo json_encode($response);
     exit();
 }
@@ -56,12 +58,14 @@ if ($conn->query($sqlInsertPeminjaman) === TRUE) {
         'status' => 'success',
         'message' => 'Peminjaman buku berhasil.'
     ];
+    header('Content-Type: application/json');
     echo json_encode($response);
 } else {
     $response = [
         'status' => 'error',
         'message' => 'Terjadi kesalahan saat memproses peminjaman buku.'
     ];
+    header('Content-Type: application/json');
     echo json_encode($response);
 }
 
