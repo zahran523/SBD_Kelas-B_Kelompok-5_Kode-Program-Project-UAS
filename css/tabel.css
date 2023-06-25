@@ -1,11 +1,11 @@
 .right-align {
     float: center;
-    padding-right: 100px;
-    padding-left: 350px;
+    padding-right: 200px;
+    padding-left: 400px;
   }
 
   h2 {
-    padding-left: 350px;
+    padding-left: 400px;
     font-family: "Poppins", Arial, sans-serif;
     font-size: 30px;
     font-weight: normal;
