@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 20 Jun 2023 pada 17.18
+-- Host: localhost
+-- Waktu pembuatan: 26 Jun 2023 pada 01.36
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
@@ -113,84 +113,40 @@ INSERT INTO `tabel_buku` (`id_buku`, `nama_buku`, `jenis_buku`, `jumlah_halaman`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_peminjaman_member`
---
-
-CREATE TABLE `tabel_peminjaman_member` (
-  `nama_member` varchar(50) DEFAULT NULL,
-  `id_member` char(10) NOT NULL,
-  `kelamin` char(1) DEFAULT NULL,
-  `alamat` varchar(150) DEFAULT NULL,
-  `kontak` varchar(13) DEFAULT NULL,
-  `id_buku` char(7) NOT NULL,
-  `nama_buku` varchar(150) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `tabel_petugas`
 --
 
 CREATE TABLE `tabel_petugas` (
   `nama_petugas` varchar(50) DEFAULT NULL,
-  `id_petugas` char(6) NOT NULL
+  `id_petugas` char(6) NOT NULL,
+  `password` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `tabel_petugas`
 --
 
-INSERT INTO `tabel_petugas` (`nama_petugas`, `id_petugas`) VALUES
-('Ikhwanul Arif', 'pe001'),
-('Haris Fadhillah', 'pe002'),
-('Ikhwanul Hakim', 'pe003'),
-('Agung Subakti', 'pe004'),
-('Shelysia Merendra\'', 'pe005'),
-('Hadi Pranata', 'pe006'),
-('Daniel Febrian T', 'pe007');
+INSERT INTO `tabel_petugas` (`nama_petugas`, `id_petugas`, `password`) VALUES
+('Ikhwanul Arif', 'pe001', ''),
+('Haris Fadhillah', 'pe002', ''),
+('Ikhwanul Hakim', 'pe003', ''),
+('Agung Subakti', 'pe004', ''),
+('Shelysia Merendra\'', 'pe005', ''),
+('Hadi Pranata', 'pe006', ''),
+('Daniel Febrian T', 'pe007', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_tanggal_peminjaman`
+-- Struktur dari tabel `transaksi`
 --
 
-CREATE TABLE `tabel_tanggal_peminjaman` (
-  `tanggal_peminjaman` date DEFAULT NULL,
-  `id_peminjaman` char(8) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data untuk tabel `tabel_tanggal_peminjaman`
---
-
-INSERT INTO `tabel_tanggal_peminjaman` (`tanggal_peminjaman`, `id_peminjaman`) VALUES
-('2023-05-18', '000002'),
-('2023-05-19', '000003'),
-('2023-05-20', '000004'),
-('2023-05-21', '000005'),
-('2023-05-22', '000006'),
-('2023-05-23', '000007'),
-('2023-05-24', '000008'),
-('2023-05-24', '000009'),
-('2023-05-17', '00001');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tabel_transaksi_perpustakaan`
---
-
-CREATE TABLE `tabel_transaksi_perpustakaan` (
-  `tanggal_peminjaman` date DEFAULT NULL,
-  `id_peminjaman` char(8) NOT NULL,
-  `nama_member` varchar(50) DEFAULT NULL,
-  `id_member` char(11) DEFAULT NULL,
-  `nama_buku` varchar(150) DEFAULT NULL,
+CREATE TABLE `transaksi` (
+  `id_transaksi` int(11) NOT NULL,
+  `id_member` char(10) DEFAULT NULL,
   `id_buku` char(7) DEFAULT NULL,
-  `nama_petugas` varchar(50) DEFAULT NULL,
-  `id_petugas` char(6) DEFAULT NULL
+  `tanggal_peminjaman` date DEFAULT NULL,
+  `tanggal_batas_peminjaman` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -210,52 +166,39 @@ ALTER TABLE `tabel_buku`
   ADD PRIMARY KEY (`id_buku`);
 
 --
--- Indeks untuk tabel `tabel_peminjaman_member`
---
-ALTER TABLE `tabel_peminjaman_member`
-  ADD PRIMARY KEY (`id_member`),
-  ADD KEY `id_buku` (`id_buku`);
-
---
 -- Indeks untuk tabel `tabel_petugas`
 --
 ALTER TABLE `tabel_petugas`
   ADD PRIMARY KEY (`id_petugas`);
 
 --
--- Indeks untuk tabel `tabel_tanggal_peminjaman`
+-- Indeks untuk tabel `transaksi`
 --
-ALTER TABLE `tabel_tanggal_peminjaman`
-  ADD PRIMARY KEY (`id_peminjaman`);
+ALTER TABLE `transaksi`
+  ADD PRIMARY KEY (`id_transaksi`),
+  ADD KEY `id_member` (`id_member`,`id_buku`),
+  ADD KEY `id_buku` (`id_buku`);
 
 --
--- Indeks untuk tabel `tabel_transaksi_perpustakaan`
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
-ALTER TABLE `tabel_transaksi_perpustakaan`
-  ADD PRIMARY KEY (`id_peminjaman`),
-  ADD KEY `id_member` (`id_member`),
-  ADD KEY `id_buku` (`id_buku`),
-  ADD KEY `id_petugas` (`id_petugas`);
+
+--
+-- AUTO_INCREMENT untuk tabel `transaksi`
+--
+ALTER TABLE `transaksi`
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Ketidakleluasaan untuk tabel `tabel_peminjaman_member`
+-- Ketidakleluasaan untuk tabel `transaksi`
 --
-ALTER TABLE `tabel_peminjaman_member`
-  ADD CONSTRAINT `tabel_peminjaman_member_ibfk_1` FOREIGN KEY (`id_buku`) REFERENCES `tabel_buku` (`id_buku`),
-  ADD CONSTRAINT `tabel_peminjaman_member_ibfk_2` FOREIGN KEY (`id_member`) REFERENCES `member_perpustakaan` (`id_member`);
-
---
--- Ketidakleluasaan untuk tabel `tabel_transaksi_perpustakaan`
---
-ALTER TABLE `tabel_transaksi_perpustakaan`
-  ADD CONSTRAINT `tabel_transaksi_perpustakaan_ibfk_1` FOREIGN KEY (`id_member`) REFERENCES `member_perpustakaan` (`id_member`),
-  ADD CONSTRAINT `tabel_transaksi_perpustakaan_ibfk_2` FOREIGN KEY (`id_buku`) REFERENCES `tabel_buku` (`id_buku`),
-  ADD CONSTRAINT `tabel_transaksi_perpustakaan_ibfk_3` FOREIGN KEY (`id_petugas`) REFERENCES `tabel_petugas` (`id_petugas`),
-  ADD CONSTRAINT `tabel_transaksi_perpustakaan_ibfk_4` FOREIGN KEY (`id_peminjaman`) REFERENCES `tabel_tanggal_peminjaman` (`id_peminjaman`);
+ALTER TABLE `transaksi`
+  ADD CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`id_buku`) REFERENCES `tabel_buku` (`id_buku`),
+  ADD CONSTRAINT `transaksi_ibfk_2` FOREIGN KEY (`id_member`) REFERENCES `member_perpustakaan` (`id_member`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
